@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+# 真实 token / 对端地址 / 数据目录（用 ccs.local.example.json 复制一份自己填）
+ccs.local.json
+# 聊天数据与上传收件
+chat/
+inbox/
+# 本机解释器路径覆盖
+python-path.txt

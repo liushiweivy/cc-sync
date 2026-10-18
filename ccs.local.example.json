@@ -1,0 +1,7 @@
+{
+  "token": "pick-a-long-random-string",
+  "relay_base": "http://127.0.0.1:8898",
+  "push_url": "http://PEER_LAN_IP:8900/send",
+  "data_dir": "",
+  "inbox_dir": ""
+}
