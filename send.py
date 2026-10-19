@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Send a message to the peer Claude (push) with relay fallback.
 
-Primary: POST <push_url>            {"from","text"}         (peer push receiver)
+Primary: POST <push_url>            {"token","from","text"} (peer push receiver, token required since 2026-10-18)
 Fallback: POST <relay_base>/send    {"token","from","text"} (relay, peer polls)
 Addresses/token come from ccs_config (ccs.local.json / CCS_* env).
 
@@ -34,7 +34,7 @@ def main():
     if PUSH_URL:  # 未配置直推地址时直接走中继
         for attempt in (1, 2):
             try:
-                resp = post(PUSH_URL, {"from": sender, "text": text})
+                resp = post(PUSH_URL, {"token": RELAY_TOKEN, "from": sender, "text": text})
                 print("pushed to peer:", resp)
                 return
             except Exception as e:

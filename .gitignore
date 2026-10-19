@@ -7,3 +7,5 @@ chat/
 inbox/
 # 本机解释器路径覆盖
 python-path.txt
+# 双机中继运行日志
+chat_server.log
